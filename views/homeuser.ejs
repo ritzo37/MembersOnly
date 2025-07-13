@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to the the app!</title>
+  </head>
+  <style>
+    body {
+      background-color: #f0f4f8;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      color: #333;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      background-color: #4caf50;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    nav a:hover {
+      background-color: #45a049;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
+    }
+
+    .message-container {
+      background-color: #ffffff;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      margin-bottom: 1rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .message-container p {
+      margin: 0.5rem 0;
+    }
+
+    a[href="/add-Message"] {
+      display: block;
+      text-align: center;
+      margin-top: 2rem;
+      text-decoration: none;
+      color: white;
+      background-color: #4caf50;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    a[href="/add-Message"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+  <body>
+    <nav>
+      <a href="/make-me-member">Become a member</a>
+      <a href="/sign-up">Sign Up</a>
+      <a href="/log-in">Log in </a>
+    </nav>
+    <h1>Here is the list of the messages that the users have added :</h1>
+    <% messages.forEach((message)=>{ %>
+    <div class="message-container">
+      <p>Message : <%=message.message%></p>
+      <p>User : ----</p>
+      <p>Added : ----</p>
+    </div>
+    <%}) %>
+    <a href="/add-Message">Add message</a>
+  </body>
+</html>
